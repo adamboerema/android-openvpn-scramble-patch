@@ -1,15 +1,3 @@
-diff --git a/.gitignore b/.gitignore
-index 30e289b..16b2b0d 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -69,3 +69,7 @@ nbproject
- test-driver
- compile
- stamp-h2
-+
-+#Android Studio
-+*.iml
-+*.idea
 diff --git a/android-config/config.h b/android-config/config.h
 index 2d378cb..2b0ff26 100644
 --- a/android-config/config.h
