@@ -56,9 +56,9 @@ index e99a49f..ad40f44 100644
      setenv_str_i(es, "local_port", e->local_port, i);
      setenv_str_i(es, "remote", e->remote, i);
      setenv_str_i(es, "remote_port", e->remote_port, i);
-+    setenv_str_i(es, "xormethod", e->xormethod, i);
++    setenv_int_i(es, "xormethod", e->xormethod, i);
 +    setenv_str_i(es, "xormask", e->xormask, i);
-+    setenv_str_i(es, "xormasklen", e->xormasklen, i);
++    setenv_int_i(es, "xormasklen", e->xormasklen, i);
  
      if (e->http_proxy_options)
      {
@@ -254,8 +254,11 @@ index 2d7f218..93a68c4 100644
 +            buffer_reverse(buf);
 +            break;
 +        case 4:
-+            buffer_mask(buf,xormask, xormasklen);
-+            break;
++            buffer_mask(buf, xormask, xormasklen);
+             buffer_xorptrpos(buf);
+             buffer_reverse(buf);
+             buffer_xorptrpos(buf);
+             break;
 +        default:
 +            ASSERT(0);
 +            return -1; /* NOTREACHED */
